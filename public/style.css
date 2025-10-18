@@ -1,0 +1,674 @@
+/* =========================================== */
+/* --- 00. GLOBAL & VARIABLE DEFINITIONS --- */
+/* =========================================== */
+
+:root {
+    /* Color Palette */
+    --bg-color: #000000;          /* Pure Black Background */
+    --text-color: #ffffff;        /* White Text */
+    --primary-color: #ffc400;     /* Yellow/Orange Accent (Buttons, Titles) */
+    --navbar-highlight-color:#ffc400 ; /* Sleek Blue for Navbar Highlight */
+    --secondary-bg: #1a1a1a;      /* Slightly lighter black for nav/elements */
+    --border-color: #333333;      /* Dark border for separation */
+}
+/* style.css */
+html {
+    /* Enables smooth scrolling animation when navigating to anchor links (e.g., #about) */
+    scroll-behavior: smooth;
+}
+
+/* --- Base Styles --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+    /* CRITICAL: Prevents horizontal scrolling */
+    overflow-x: hidden; 
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px; /* Added padding for responsiveness */
+}
+
+/* =========================================== */
+/* --- GLOBAL SECTION TITLE STYLING --- */
+/* (Applied to all h2 headings in sections) */
+/* =========================================== */
+.section-title { 
+    font-size: 2.5em; 
+    color: var(--primary-color); 
+    /* Applied: Left alignment as requested */
+    text-align: left; 
+    margin-bottom: 40px; /* Increased margin for better separation */
+    font-weight: 800; 
+}
+
+/* =========================================== */
+/* --- 01. NAVIGATION BAR (HEADER) STYLING --- */
+/* (Left-aligned logo, Center-aligned links) */
+/* =========================================== */
+.navbar {
+    display: flex;
+    /* Changed to flex-start to push logo to the far left */
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 15px 50px;
+    background-color: var(--secondary-bg); 
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+/* LOGO: Pushed to the far left */
+.logo {
+    /* Auto margin pushes the next elements away, keeping the logo on the left */
+    margin-right: 50px; 
+    /* Changed this from 'auto' to a fixed margin to keep the logo block contained */
+}
+
+.logo h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* NAV LINKS: Centered block of links */
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    margin: 0 auto; /* Added auto margins to center the entire links block */
+    padding: 0; 
+    gap: 30px; 
+}
+
+/* Link Text */
+.nav-links li a {
+    color: var(--text-color); 
+    text-decoration: none;
+    padding: 10px 0px; 
+    font-weight: 500;
+    transition: color 0.3s ease; 
+    
+    /* Underline setup */
+    position: relative; 
+    display: inline-block;
+}
+
+/* Underline Element (::after) */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    left: 50%; 
+    width: 0;
+    height: 3px;
+    background-color: var(--navbar-highlight-color); 
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Hover/Active State (Text Color & Underline) */
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--navbar-highlight-color); 
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%; 
+    left: 0; 
+}
+
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.hamburger { display: none; }
+
+
+/* =========================================== */
+/* --- 02. GLOBAL BUTTON STYLES --- */
+/* =========================================== */
+.btn { 
+    padding: 12px 28px; 
+    border: 2px solid var(--primary-color); 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+    cursor: pointer; 
+}
+.btn-primary { 
+    background-color: var(--primary-color); 
+    color: var(--bg-color); 
+}
+.btn-primary:hover { 
+    background-color: transparent; 
+    color: var(--primary-color); 
+}
+.btn-secondary { 
+    background-color: transparent; 
+    color: var(--text-color); 
+    border-color: var(--text-color); 
+}
+.btn-secondary:hover { 
+    background-color: var(--primary-color); 
+    color: var(--bg-color); 
+    border-color: var(--primary-color); 
+}
+
+/* =========================================== */
+/* --- 03. SECTION SPECIFIC STYLING --- */
+/* =========================================== */
+
+/* --- HERO SECTION --- */
+.hero-section { 
+    min-height: 80vh; 
+    position: relative; 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    padding: 90px 50px 50px 50px; 
+    text-align: left; 
+}
+.hero-content { max-width: 600px; padding: 0; }
+.greeting { color: var(--text-color); font-size: 1.2em; font-weight: 400; margin-bottom: 5px; }
+.hero-content h1 { font-size: 5em; line-height: 1.1; margin: 0 0 10px 0; font-weight: 700; }
+.hero-content h1 .first-name { display: block; color: var(--text-color); font-weight: 700; }
+.hero-content h1 .last-name { display: block; color: var(--primary-color); font-weight: 700; }
+.job-title { font-size: 1.8em; font-weight: 400; margin: 10px 0 30px 0; color: #ccc; }
+.hero-actions { margin-bottom: 30px; display: flex; justify-content: flex-start; gap: 20px; }
+.contact-icons.hero-icons { margin-top: 30px; margin-bottom: 0; display: flex; justify-content: flex-start; font-size: 1.4em; gap: 25px; }
+.contact-icons.hero-icons a { color: var(--primary-color); transition: color 0.3s; }
+.contact-icons.hero-icons a:hover { color: var(--text-color); }
+
+
+/* --- ABOUT ME SECTION --- */
+.about-section { 
+    background-color: var(--bg-color);
+    padding: 80px 50px; 
+}
+.about-content { display: flex; gap: 40px; align-items: stretch; }
+.about-photo { flex: 1; display: flex; justify-content: flex-start; margin-top: 40px; padding-top: 0; }
+.profile-thumb { width: 100%; max-width: 400px; max-height: 450px; height: auto; object-fit: cover; }
+.about-text-details { flex: 1; display: flex; flex-direction: column; }
+.summary-paragraph { font-size: 1.1em; color: #ccc; line-height: 1.6; margin-bottom: 30px; }
+.personal-details-list { list-style: none; padding: 0; margin: 15px 0 40px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px 30px; }
+.personal-details-list li { font-size: 1em; display: flex; justify-content: flex-start; align-items: baseline; }
+.detail-label { font-weight: 700; color: var(--text-color); white-space: nowrap; }
+.detail-value { font-weight: 400; color: #a0a0a0; white-space: nowrap; margin-left: 4px; }
+.download-btn { margin-top: auto; width: fit-content; }
+
+
+/* --- PROJECT SECTION (GLASS MORPHISM) --- */
+.project-section {
+    padding: 80px 50px; 
+    position: relative;
+    z-index: 10;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.glass-container {
+    background-color: rgba(32, 32, 34, 0.7); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    position: relative;
+}
+.content-transition { transition: opacity 0.3s ease-in-out; }
+.card-stack-container { width: 300px; height: 400px; position: relative; overflow: visible; transform: none; }
+.card-base {
+    position: absolute; top: 0; left: 0; width: 100%; height: 400px; 
+    border-radius: 1.5rem; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.05) inset;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s ease-in-out;
+    overflow: hidden; will-change: transform, opacity;
+}
+/* Custom Gradient Button (View Code) */
+.join-button {
+    background-image: linear-gradient(to right, #8b5cf6, #ec4899); 
+    transition: all 0.3s ease;
+}
+.join-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
+}
+
+
+/* --- CERTIFICATION CAROUSEL --- */
+.carousel-container {
+    display: flex; align-items: center; justify-content: center;
+    width: 95vw; height: 80vh; position: relative;
+}
+.card-item {
+    flex-shrink: 0; background-size: cover; background-position: center;
+    border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative; overflow: hidden; margin: 0 0.75rem;
+}
+.no-transition { transition: none !important; }
+.card-item.active {
+    width: 60vw; max-width: 500px; height: 60vh; z-index: 10;
+}
+.card-item:not(.active) {
+    width: 5vw; min-width: 80px; height: 55vh; 
+    filter: brightness(0.6); opacity: 0.8; cursor: pointer;
+}
+.card-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white; transition: opacity 0.3s; opacity: 0;
+}
+.card-item.active .card-overlay { opacity: 1; }
+.card-item:not(.active) .card-overlay { display: none; }
+.card-item .small-icon-holder {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.5s; pointer-events: none; 
+}
+.card-item:not(.active) .small-icon-holder { opacity: 1; }
+
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+#contactForm {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 14px;
+    background-color: #2c2c2c; 
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+    font-size: 1em;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 196, 0, 0.5);
+}
+
+#contactForm textarea {
+    resize: vertical; 
+}
+
+/* Existing CSS for Headings */
+.section-title { 
+    font-size: 3em; 
+    color: var(--primary-color); 
+    /* NOTE: If your CSS still has text-align: left, the Tailwind class 
+       'text-center' in the HTML above will center it. */
+    margin-bottom: 40px; 
+    font-weight: 800; 
+}
+
+/* Existing CSS for Carousel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    height: 80vh;
+    position: relative;
+    /* ... other styles for card appearance ... */
+}
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* The core magic of the floating label */
+.floating-label {
+    /* Initial state: Large, inside the input */
+    top: 50%; 
+    left: 1rem;
+    transform: translateY(-50%) scale(1);
+    line-height: 1.5;
+    
+    color: #a0a0a0; /* Gray placeholder color */
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    transform-origin: left top;
+    background-color: transparent;
+    padding: 0;
+    z-index: 10;
+    position: absolute; /* Needed for positioning */
+}
+
+/* The input and textarea need padding adjustments */
+.input-field {
+    color: white;
+    /* Adjust vertical padding to make room for the floating label */
+    padding-top: 1.25rem !important; /* pt-5 equivalent */
+    padding-bottom: 0.75rem !important; /* pb-3 equivalent */
+    /* Ensure the background matches the input-bg color for consistency */
+    background-color: #1e1e1e;
+}
+
+/* When input is focused OR has content (is not showing placeholder) */
+.peer:focus + .floating-label,
+.peer:not(:placeholder-shown) + .floating-label {
+    /* Final state: Smaller, moved up, changed color, and with background for cutout */
+    top: -0.65rem; /* Move up to sit directly on the top border line */
+    transform: scale(0.85) translateY(0); /* Shrink only */
+    line-height: 1; /* Tighter line height for the smaller text */
+    color: #facc15; /* Accent color (primary-color) is now yellow */
+    padding: 0 0.5rem; /* Add padding for the background "cutout" */
+    background-color: #0f0f0f; /* Match the body background color */
+}
+
+/* Adjustments specific to TEXTAREA */
+textarea.input-field {
+    resize: none;
+    height: 10rem; /* Give it a fixed height */
+    /* Textarea needs its own vertical adjustment for the initial label position */
+    padding-top: 1.75rem !important; /* Slightly more room at the top */
+}
+
+/* Adjust the floating label position specifically for textarea */
+textarea.peer:focus + .floating-label,
+textarea.peer:not(:placeholder-shown) + .floating-label {
+    /* Same floated position as input */
+    top: -0.65rem; 
+}
+
+/* Ensure the button looks good */
+.btn-primary {
+    background-color: #facc15; /* Button color is now yellow */
+    color: #1e1e1e; /* Dark text for contrast on yellow background */
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem; /* rounded-lg equivalent */
+    transition: background-color 0.2s;
+    font-weight: 700; /* Bold text for visibility */
+}
+.btn-primary:hover {
+    background-color:transparent; /* A slightly lighter shade of yellow on hover */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+
+ body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+        }
+
+        /* Styling for the individual skill items */
+        .skill-item-card {
+            background-color: #1a1a1a; /* Dark gray background */
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .skill-icon-placeholder {
+            /* Placeholder for the icon area to make it visually distinct */
+            width: 3rem; /* w-12 */
+            height: 3rem; /* h-12 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem; /* rounded */
+            font-weight: 800; /* font-extrabold */
+            margin-bottom: 0.5rem;
+            color: #d1d5db; /* Light gray text */
+            font-size: 1.25rem; /* text-xl */
+            background-color: #262626; /* Slightly lighter background for the icon box */
+        }
+
+         body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+        }
+
+        /* Styling for the individual skill items */
+        .skill-item-card {
+            background-color: #1a1a1a; /* Dark gray background */
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            height: 100%; /* Ensure all cards are the same height */
+        }
+
+        .skill-item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .skills-icon {
+            width: 3rem; /* w-12 */
+            height: 3rem; /* h-12 */
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+            border-radius: 0.5rem; /* Slightly rounded images */
+        }
+
+.nav-link.active {
+  color: #facc15; /* or your highlight color */
+  font-weight: 600;
+  border-bottom: 2px solid #facc15;
+}
+
+/* =========================================== */
+/* --- NAVIGATION BAR STYLING (Even Spaced Navbar) --- */
+/* =========================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* LOGO stays on the left */
+.logo h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* NAV LINKS - evenly spaced like a real navbar */
+.nav-links {
+    display: flex;
+    justify-content: center; /* Center the link group */
+    align-items: center;
+    flex-grow: 1; /* Take available space between logo and right side */
+    gap: 30px; /* Equal horizontal spacing between each link */
+    margin-left: 100px; /* Adds breathing room after logo */
+    list-style: none;
+}
+
+/* Each link item */
+.nav-links li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--navbar-highlight-color);
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Hover and active effects */
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--navbar-highlight-color);
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Optional right-side items (theme toggle, etc.) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Hamburger hidden for desktop */
+.hamburger {
+    display: none;
+}
+
+
+/*
+  ------------------------------------------------------
+  Responsive adjustments for the certificate items
+  ------------------------------------------------------
+*/
+
+/* Mobile Screens (up to 640px) */
+/* One certificate card takes up 80% of the screen width */
+@media (max-width: 640px) {
+    .certificate-item {
+        width: 85vw; /* Slightly larger on very small screens */
+        margin: 0 0.75rem; 
+    }
+}
+
+/* Tablet Screens (641px to 1024px) */
+/* Make certificates slightly smaller to show a hint of the next one */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .certificate-item {
+        width: 60vw; /* One certificate is 60% of the screen */
+        margin: 0 1rem;
+    }
+}
+
+/* Desktop Screens (1025px and up) */
+/* The layout typically looks better with less scrolling on desktop */
+@media (min-width: 1025px) {
+    .certificate-item {
+        /* You can set a fixed max width or a smaller viewport width */
+        width: 40vw; 
+        max-width: 500px; /* Optional max-width for very large displays */
+        margin: 0 1.5rem;
+    }
+
+    /* Center the container on larger screens to make it look clean */
+    #certificates .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#card-stack-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.card-base {
+  position: absolute;
+  width: 320px;
+  height: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+
+
+/* Desktop Project / Certificate Cards */
+#card-stack-container,
+#desktop-cert-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* necessary for absolute children */
+    height: 400px;      /* adjust height for proper vertical centering */
+}
+
+.card-base,
+.cert-card {
+    position: absolute;   /* stacked or layered */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* perfectly centered */
+}

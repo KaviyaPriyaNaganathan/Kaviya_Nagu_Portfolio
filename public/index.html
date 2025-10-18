@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaviya Naganathan's Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Using a slightly more opaque dark glass background
+                        'custom-glass-bg': 'rgba(32, 32, 34, 0.85)', 
+                        'custom-border': 'rgba(255, 255, 255, 0.1)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Kaviya</h2>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link" data-section="hero">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                    <li><a href="#certificates" class="nav-link" data-section="certificates">Certifications</a></li>
+                    <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                </div>
+        </nav>
+    </header>
+
+    <main>
+
+
+<section id="hero" class="content-section hero-section">
+    <div class="container mx-auto px-0 py-0 flex flex-col md:flex-row items-center justify-between">
+        
+        <div class="hero-content w-full md:w-1/2 text-center md:text-left mb-0 md:mb-0">
+            <p class="greeting">HELLO!</p>
+            <h1>
+                <span class="first-name">I'm Kaviya</span>
+                <span class="last-name">Naganathan</span>
+            </h1>
+            <p class="job-title">Software Developer</p>
+            
+            <div class="hero-actions mt-8">
+                <a href="#contact" class="btn btn-primary mr-4">HIRE ME</a>
+                <a href="#projects" class="btn btn-secondary">MY WORKS</a>
+            </div>
+
+            <div class="contact-icons hero-icons mt-8">
+                <a href="https://github.com/KaviyaPriyaNaganathan" target="_blank" title="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kaviya-nagu" target="_blank" title="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/KaviyaNagu" target="_blank" title="Twitter/X Profile">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://medium.com/@kaviyanagu007" target="_blank" title="Kaviya's Blog (Medium)">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hidden md:flex w-full md:w-1/2 justify-center md:justify-end">
+            <img src="assets/home page.webp" 
+                 alt="Kaviya's home page graphic" 
+                 class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-lg shadow-2xl animate-fade-in-up">
+        </div>
+        </div>
+</section>
+        
+        <section id="about" class="content-section about-section">
+            <div class="container">
+                <div class="about-content">
+                    
+                    <div class="about-photo">
+                        <img src="assets/photo_white (1).png" alt="Kaviya Profile" class="profile-thumb">
+                    </div>
+                    
+                    <div class="about-text-details">
+                        <h2 class="section-title">About Me</h2>
+                        
+                        <p class="summary-paragraph">
+                            I'm Kaviya Priya, a passionate Software Developer focusing on robust system architecture 
+                            and delivering clean, maintainable code that translates into superior user experiences. 
+                            I thrive on turning complex problems into elegant, efficient solutions.
+                        </p>
+                        
+                        <ul class="personal-details-list">
+                            <li><span class="detail-label">Name:</span> <span class="detail-value">Kaviya Priya</span></li>
+                            <li><span class="detail-label">Date of Birth:</span> <span class="detail-value">February 21, 2004</span></li>
+                            <li><span class="detail-label">Email:</span> <span class="detail-value">kaviyanagu007@gmail.com</span></li>
+                            <li><span class="detail-label">Location:</span> <span class="detail-value">Tamil Nadu, India</span></li>
+                        </ul>
+                        
+                        <a href="resume.pdf" target="_blank" class="btn btn-primary download-btn">DOWNLOAD CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section skills-container container max-w-5xl mx-auto space-y-10 w-full px-4">
+            <h2 class="text-yellow-400 text-3xl md:text-4xl font-extrabold text-center tracking-wider mb-8">
+                What I Do?
+            </h2>
+
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4">
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/00599c/ffffff?text=C" alt="C" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">C</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/EA2D2E/ffffff?text=J" alt="Java" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Java</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/4EAA25/ffffff?text=Sh" alt="Shell Scripting" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Shell Scripting</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/FCC624/000000?text=Lnx" alt="Linux" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Linux</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/00758F/ffffff?text=SQL" alt="SQL" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">SQL</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/E34F26/ffffff?text=H5" alt="HTML" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">HTML</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/1572B6/ffffff?text=CSS" alt="CSS" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">CSS</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/F7DF1E/000000?text=JS" alt="JavaScript" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">JavaScript</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/339933/ffffff?text=Node" alt="Node.js" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Node.js</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/333333/ffffff?text=Exp" alt="Express.js" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Express.js</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/FF9900/000000?text=AWS" alt="AWS" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">AWS</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/0078D4/ffffff?text=Az" alt="Azure" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Azure</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/181717/ffffff?text=Git" alt="Git & GitHub" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Git & GitHub</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/F24E1E/ffffff?text=Figma" alt="Figma" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Figma</p>
+                </div>
+
+                <div class="skill-item-card">
+                    <img src="https://placehold.co/48x48/7D3F98/ffffff?text=Bq" alt="Balsamiq" class="skills-icon">
+                    <p class="text-gray-300 text-sm font-medium">Balsamiq</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="content-section py-20 bg-black-900 text-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="section-title text-4xl font-extrabold mb-12 text-center text-yellow-400">Certifications</h2>
+
+        <div id="certifications-accordion" class="space-y-4">
+        </div>
+        
+    </div>
+</section>
+
+<section id="projects" class="content-section pt-5 pb-20 bg-black-800 text-white">
+    <div class="container mx-auto px-12">
+        <h2 class="text-4xl font-extrabold mb-12 text-center text-yellow-400">Projects</h2>
+
+        <div id="desktop-project-wrapper" class="hidden md:block">
+            <div class="glass-container flex p-6 rounded-3xl shadow-2xl backdrop-blur-md">
+                
+                <div class="w-2/5 pr-8 pl-6 flex flex-col justify-between"> 
+                    <div id="dynamic-content-wrapper" class="transition-opacity duration-300 mb-8">
+                        <h3 id="movie-title" class="text-3xl font-bold mb-4 text-yellow-400">AWS Resource Monitoring</h3>
+                        <p id="movie-description" class="text-gray-300 leading-relaxed mb-6">A comprehensive dashboard for tracking resource usage and costs across multiple AWS regions using Lambda and DynamoDB. Provides real-time alerts.</p>
+                      <a id="github-link-button" href="#" target="_blank" class="bg-yellow-400 text-gray-900 font-semibold py-2 px-4 rounded-lg inline-flex items-center space-x-2 transition-colors hover:bg-transparent hover:text-yellow-400 hover:border-yellow-400 hover:border-2">
+    <i class="fab fa-github"></i>
+    <span>View GitHub</span>
+</a>
+                    </div>
+
+                    <div class="flex space-x-4 mt-8">
+                        <button id="prev-btn-desktop" class="w-12 h-12 bg-gray-800/50 hover:bg-gray-700/70 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fas fa-chevron-left text-xl text-yellow-400"></i>
+                        </button>
+                        <button id="next-btn-desktop" class="w-12 h-12 bg-gray-800/50 hover:bg-gray-700/70 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fas fa-chevron-right text-xl text-yellow-400"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-3/5 h-[400px] relative">
+                    <div id="card-stack-container" class="w-full h-full relative">
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-project-carousel" class="md:hidden pt-10 pb-10">
+            <div class="flex justify-center items-center space-x-4">
+                <button id="prev-btn-mobile" class="p-3 bg-gray-800/50 rounded-full transition-colors disabled:opacity-50" disabled>
+                    <i class="fas fa-chevron-left text-lg text-yellow-400"></i>
+                </button>
+                
+                <div id="mobile-project-cards-container" class="flex-grow max-w-sm mx-auto min-h-[300px] flex items-center justify-center">
+                    </div>
+                <button id="next-btn-mobile" class="p-3 bg-gray-800/50 rounded-full transition-colors">
+                    <i class="fas fa-chevron-right text-lg text-yellow-400"></i>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+        <section id="contact" class="content-section w-full">
+            <div class="container max-w-xl mx-auto">
+
+  <div class="w-full max-w-2xl bg-gray-900 shadow-2xl rounded-2xl overflow-hidden flex flex-col items-center mb-20">
+
+    <div class="w-full bg-gray-900 p-8 text-white flex flex-col items-center justify-center space-y-5">
+        
+        <h1 class="text-4xl font-extrabold text-center text-[#ffc400]">Let's Create Together</h1>
+        
+          <img src="assets/create together.webp" 
+                  alt="Avatar: create together.webp" 
+                  class="w-16 h-16 object-cover rounded-full">
+        <p class="text-center text-base font-light text-gray-300 max-w-md">
+            Ready to discuss a project, or just want to say hello? Use the quick links below to get in touch.
+        </p>
+    </div>
+
+  
+    <div class="w-full p-8 sm:p-10 bg-gray-900">
+        <h2 class="text-xl font-bold text-[#ffc400] mb-6 text-center">Direct Channels</h2>
+
+        <div class="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-4 sm:space-y-0">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kaviyanagu007@gmail.com&su=Inquiry%20from%20Your%20Portfolio&body=Hello%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20reach%20out%20regarding..."
+                  target="_blank"
+                  class="flex-1 text-center p-3 font-semibold rounded-xl shadow-lg 
+                            bg-[#ffc400] text-gray-900 border-2 border-transparent 
+                            hover:bg-transparent hover:text-[#ffc400] hover:border-[#ffc400] 
+                            transition duration-200 ease-in-out transform hover:scale-[1.02]">
+                    <span class="flex items-center justify-center space-x-2">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26c.39.26.86.26 1.25 0L21 8m-2-2a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2z"></path></svg>
+                        <span>Email</span>
+                    </span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/kaviya-nagu" target="_blank" class="flex-1 text-center p-3 font-semibold rounded-xl shadow-lg 
+                            bg-gray-900 text-white border-2 border-white 
+                            hover:bg-[#ffc400] hover:text-gray-900 hover:border-[#ffc400] 
+                            transition duration-200 ease-in-out transform hover:scale-[1.02]">
+                    <span class="flex items-center justify-center space-x-2">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.535-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </span>
+                </a>
+                
+                <a href="public/resume.pdf" target="_blank" class="flex-1 text-center p-3 font-semibold rounded-xl shadow-lg 
+                            bg-gray-900 text-white border-2 border-white 
+                            hover:bg-[#ffc400] hover:text-gray-900 hover:border-[#ffc400] 
+                            transition duration-200 ease-in-out transform hover:scale-[1.02]">
+                    <span class="flex items-center justify-center space-x-2">
+                           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-6 4h2M18 10V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2v-4"></path></svg>
+                        <span>Resume</span>
+                    </span>
+                </a>
+            </div>
+    </div>
+  </div>
+            </div>
+        </section>
+    </main>
+
+ <footer class="w-full bg-gray-900 border-t border-custom-border py-6">
+    <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            
+            <p class="text-sm text-gray-400 font-light">
+                &copy; <span id="current-year"></span> Kaviya Naganathan. All rights reserved.
+            </p>
+
+            <div class="flex space-x-4">
+                <a href="#about" class="text-gray-400 hover:text-yellow-400 transition-colors text-sm">About</a>
+                <a href="#projects" class="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Projects</a>
+                <a href="#contact" class="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Contact</a>
+            </div>
+
+            <div class="flex space-x-5 text-lg">
+                <a href="https://github.com/KaviyaPriyaNaganathan" target="_blank" title="GitHub">
+                    <i class="fab fa-github text-gray-400 hover:text-yellow-400 transition-colors"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kaviya-nagu" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in text-gray-400 hover:text-yellow-400 transition-colors"></i>
+                </a>
+                <a href="https://x.com/KaviyaNagu" target="_blank" title="Twitter/X">
+                    <i class="fab fa-x-twitter text-gray-400 hover:text-yellow-400 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // JavaScript to dynamically set the current year for the copyright notice
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

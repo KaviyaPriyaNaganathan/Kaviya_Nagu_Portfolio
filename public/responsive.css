@@ -1,0 +1,226 @@
+/* =========================================== */
+/* --- 01. MOBILE RESPONSIVENESS (992px and below) --- */
+/* =========================================== */
+
+@media (max-width: 992px) {
+    
+    /* --- Navbar and Global Mobile Styles --- */
+    .navbar {
+        padding: 15px 20px;
+        /* Revert to relative position on mobile for simpler stacking */
+        position: relative; 
+    }
+
+    .nav-links {
+        display: none; /* Hide traditional nav links */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+    
+    /* --- Hero Section Mobile --- */
+    .hero-section { 
+        /* Center the entire block */
+        min-height: auto;
+        justify-content: center;
+        align-items: center; 
+        padding: 80px 20px;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 { 
+        font-size: 3.5em; 
+    }
+    
+    .hero-actions, 
+    .contact-icons.hero-icons { 
+        justify-content: center; /* Center buttons and icons */
+    }
+
+    /* --- About Me Section Mobile --- */
+    .about-section {
+        padding: 60px 20px;
+    }
+    
+    .about-content {
+        flex-direction: column; /* Stack image and text */
+        /* Centers the entire stacked block (photo, title, text area) */
+        align-items: center; 
+    }
+
+    .about-photo {
+        margin-top: 0; 
+        margin-bottom: 30px;
+        /* Centers the image within its container */
+        justify-content: center; 
+    }
+    
+    .about-text-details {
+        /* Set max width and ensure it uses the full mobile width */
+        width: 100%; 
+        max-width: 600px; 
+    }
+    
+    .section-title {
+        /* KEY CHANGE: CENTER THE ABOUT ME TITLE */
+        text-align: center;
+    }
+
+    .summary-paragraph {
+        /* Left-align body text for readability */
+        text-align: left;
+    }
+    
+    .personal-details-list {
+        /* Stack details vertically and keep text left-aligned */
+        grid-template-columns: 1fr;
+        gap: 10px 0;
+        text-align: left;
+    }
+
+    .download-btn {
+        /* Center button relative to the content block */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/*
+  ======================================================
+  2. Projects Section
+  ======================================================
+  Goal: Ensure the text block and card stack stack vertically on small screens
+        and that the card stack isn't too large.
+*/
+
+/* --- Mobile Screens (Max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* The parent .glass-container already has flex-col on mobile, but 
+      we need to control the inner element widths and padding. 
+    */
+    .glass-container {
+        /* Reduce padding on very small screens */
+        padding: 2rem;
+        /* Ensure it uses the full width for better spacing */
+        width: 95%; 
+    }
+
+    /* Adjust the text content wrapper for mobile */
+    #dynamic-content-wrapper {
+        /* Allow content wrapper to take less vertical space if needed */
+        height: auto; 
+        min-height: 150px;
+        text-align: center; /* Center text on mobile */
+    }
+
+    /* Center the button under the text */
+    #github-link-button {
+        align-self: center; 
+        margin-top: 1.5rem;
+    }
+    
+    /* Adjust the card stack container size */
+    .card-stack-container {
+        /* Make the card stack smaller on mobile */
+        transform: scale(0.75); 
+        margin: 2rem 0; /* Add vertical space when stacked */
+    }
+
+    /* Adjust project title/description text size for readability */
+    #movie-title {
+        font-size: 1.75rem; /* Smaller title */
+    }
+
+    #movie-description {
+        font-size: 1rem; /* Smaller body text */
+    }
+}
+
+/* --- Tablet Screens (769px to 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Keep horizontal layout, but scale down the card stack slightly */
+    .card-stack-container {
+        /* Slightly reduce size on mid-sized tablets */
+        transform: scale(0.9);
+    }
+    .glass-container {
+        padding: 3rem;
+    }
+}/*
+  ------------------------------------------------------
+  Responsive adjustments for the certificate items
+  ------------------------------------------------------
+*/
+
+/* Mobile Screens (up to 640px) */
+/* One certificate card takes up 80% of the screen width */
+@media (max-width: 640px) {
+    .certificate-item {
+        width: 85vw; /* Slightly larger on very small screens */
+        margin: 0 0.75rem; 
+    }
+}
+
+/* Tablet Screens (641px to 1024px) */
+/* Make certificates slightly smaller to show a hint of the next one */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .certificate-item {
+        width: 60vw; /* One certificate is 60% of the screen */
+        margin: 0 1rem;
+    }
+}
+
+/* Desktop Screens (1025px and up) */
+/* The layout typically looks better with less scrolling on desktop */
+@media (min-width: 1025px) {
+    .certificate-item {
+        /* You can set a fixed max width or a smaller viewport width */
+        width: 40vw; 
+        max-width: 500px; /* Optional max-width for very large displays */
+        margin: 0 1.5rem;
+    }
+
+    /* Center the container on larger screens to make it look clean */
+    #certificates .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* --- Certificate Carousel Responsiveness ---
+  This manages the overall size of the cards for smaller screens.
+*/
+
+/* --- Mobile Screens (Max-width: 767px) --- */
+@media (max-width: 767px) {
+    /* 1. Scale down the entire carousel wrapper to make all cards smaller.
+      This is the easiest way to universally reduce the "whole div" size. 
+    */
+    #carouselWrapper { /* Assuming you wrap the carousel in a wrapper div */
+        transform: scale(0.85); /* Reduce size to 85% */
+        transform-origin: top center; /* Scale from the top center */
+        margin-bottom: -15%; /* Adjust vertical space if scaling pushes content down */
+    }
+
+    /* 2. Adjust the base card size itself. 
+      (Your JS's transform overrides the position, but the base size matters)
+    */
+    .card-item {
+        width: 250px; /* Smaller base width */
+        height: 180px; /* Smaller base height */
+    }
+}
+
+/* --- Tablet Screens (768px to 1024px) --- */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #carouselWrapper { 
+        transform: scale(0.95); /* Slight reduction */
+        transform-origin: top center;
+    }
+}
