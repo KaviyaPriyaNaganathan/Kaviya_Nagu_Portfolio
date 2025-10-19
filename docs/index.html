@@ -219,7 +219,7 @@
     </div>
 </section>
 
-<section id="projects" class="content-section pt-5 pb-20 bg-black-800 text-white">
+<section id="projects" class="content-section pb-20 bg-black-800 text-white">
     <div class="container mx-auto px-12">
         <h2 class="text-4xl font-extrabold mb-12 text-center text-yellow-400">Projects</h2>
 
@@ -230,10 +230,11 @@
                     <div id="dynamic-content-wrapper" class="transition-opacity duration-300 mb-8">
                         <h3 id="movie-title" class="text-3xl font-bold mb-4 text-yellow-400">AWS Resource Monitoring</h3>
                         <p id="movie-description" class="text-gray-300 leading-relaxed mb-6">A comprehensive dashboard for tracking resource usage and costs across multiple AWS regions using Lambda and DynamoDB. Provides real-time alerts.</p>
-                      <a id="github-link-button" href="#" target="_blank" class="bg-yellow-400 text-gray-900 font-semibold py-2 px-4 rounded-lg inline-flex items-center space-x-2 transition-colors hover:bg-transparent hover:text-yellow-400 hover:border-yellow-400 hover:border-2">
-    <i class="fab fa-github"></i>
-    <span>View GitHub</span>
-</a>
+                        
+                        <a id="github-link-button" href="#" target="_blank" class="bg-yellow-400 text-gray-900 font-semibold py-2 px-4 rounded-lg inline-flex items-center space-x-2 transition-colors hover:bg-transparent hover:text-yellow-400 hover:border-yellow-400 hover:border-2">
+                            <i class="fab fa-github"></i>
+                            <span>View GitHub</span>
+                        </a>
                     </div>
 
                     <div class="flex space-x-4 mt-8">
@@ -253,20 +254,24 @@
             </div>
         </div>
 
-        <div id="mobile-project-carousel" class="md:hidden pt-10 pb-10">
-            <div class="flex justify-center items-center space-x-4">
-                <button id="prev-btn-mobile" class="p-3 bg-gray-800/50 rounded-full transition-colors disabled:opacity-50" disabled>
-                    <i class="fas fa-chevron-left text-lg text-yellow-400"></i>
-                </button>
-                
-                <div id="mobile-project-cards-container" class="flex-grow max-w-sm mx-auto min-h-[300px] flex items-center justify-center">
-                    </div>
-                <button id="next-btn-mobile" class="p-3 bg-gray-800/50 rounded-full transition-colors">
-                    <i class="fas fa-chevron-right text-lg text-yellow-400"></i>
-                </button>
-            </div>
+<div id="mobile-project-carousel-wrapper" class="md:hidden pt-10 pb-10">
+    
+    <div id="mobile-card-display" class="flex-grow max-w-sm mx-auto min-h-[300px] flex items-center justify-center">
         </div>
+    
+    <div class="flex justify-center items-center mt-6 space-x-4">
         
+        <button id="prev-btn-mobile" class="p-3 bg-gray-800/50 hover:bg-gray-700/70 rounded-full transition-colors disabled:opacity-50" disabled>
+            <i class="fas fa-chevron-left text-lg text-yellow-400"></i>
+        </button>
+        
+        <button id="next-btn-mobile" class="p-3 bg-gray-800/50 hover:bg-gray-700/70 rounded-full transition-colors">
+            <i class="fas fa-chevron-right text-lg text-yellow-400"></i>
+        </button>
+        
+    </div>
+    
+</div>
     </div>
 </section>
 
@@ -305,10 +310,15 @@
                     </span>
                 </a>
 
-                <a href="https://www.linkedin.com/in/kaviya-nagu" target="_blank" class="flex-1 text-center p-3 font-semibold rounded-xl shadow-lg 
-                            bg-gray-900 text-white border-2 border-white 
-                            hover:bg-[#ffc400] hover:text-gray-900 hover:border-[#ffc400] 
-                            transition duration-200 ease-in-out transform hover:scale-[1.02]">
+<a href="https://www.linkedin.com/in/kaviya-nagu" target="_blank" class="flex-1 text-center p-3 font-semibold rounded-xl shadow-lg 
+          bg-gray-900 text-white border-2 border-white 
+          hover:bg-[#ffc400] hover:text-gray-900 hover:border-[#ffc400] 
+          transition duration-200 ease-in-out transform hover:scale-[1.02]
+
+          /* --- RESET STATES FOR BROWSER HISTORY --- */
+          visited:bg-gray-900 visited:text-white visited:border-white 
+          active:bg-gray-900 active:text-white active:border-white 
+          focus:bg-gray-900 focus:text-white focus:border-white focus:ring-0">
                     <span class="flex items-center justify-center space-x-2">
                         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.535-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -317,15 +327,22 @@
                     </span>
                 </a>
                 
-                <a href="docs/resume.pdf" target="_blank" class="flex-1 text-center p-3 font-semibold rounded-xl shadow-lg 
-                            bg-gray-900 text-white border-2 border-white 
-                            hover:bg-[#ffc400] hover:text-gray-900 hover:border-[#ffc400] 
-                            transition duration-200 ease-in-out transform hover:scale-[1.02]">
-                    <span class="flex items-center justify-center space-x-2">
-                           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-6 4h2M18 10V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2v-4"></path></svg>
-                        <span>Resume</span>
-                    </span>
-                </a>
+<a href="resume.pdf" target="_blank" 
+   class="flex-1 text-center p-3 font-semibold rounded-xl shadow-lg 
+          bg-gray-900 text-white border-2 border-white 
+          hover:bg-[#ffc400] hover:text-gray-900 hover:border-[#ffc400] 
+          transition duration-200 ease-in-out transform hover:scale-[1.02]
+
+          /* --- RESET STATES FOR BROWSER HISTORY --- */
+          visited:bg-gray-900 visited:text-white visited:border-white 
+          active:bg-gray-900 active:text-white active:border-white 
+          focus:bg-gray-900 focus:text-white focus:border-white focus:ring-0">
+    
+    <span class="flex items-center justify-center space-x-2">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-6 4h2M18 10V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2v-4"></path></svg>
+        <span>Resume</span>
+    </span>
+</a>
             </div>
     </div>
   </div>

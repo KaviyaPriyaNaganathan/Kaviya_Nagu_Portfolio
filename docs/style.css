@@ -672,3 +672,29 @@ body {
     top: 50%;
     transform: translate(-50%, -50%); /* perfectly centered */
 }
+
+/* =========================================== */
+/* --- FULL VIEWPORT & SCROLL SNAP SETUP --- */
+/* (This applies globally for a modern scroll experience) */
+/* =========================================== */
+/* In style.css, modify the .about-section styles */
+.about-section { 
+    /* Remove padding from the section itself to allow 100vh centering */
+    padding: 0; 
+}
+
+/* Re-apply the desired spacing/padding to the inner container */
+.about-section .container {
+    /* Use padding here to create the internal spacing/gap consistency you want */
+    padding: 0px 10px; 
+    width: 100%;
+}
+
+/* In your main CSS or desktop media query (min-width: 769px) */
+#desktop-project-wrapper {
+    /* Use flex properties to center the entire block (arrows + card) */
+    display: flex;
+    align-items: center; /* Vertically center the arrows with the card */
+    justify-content: center; /* Center the whole component horizontally */
+    width: 100%;
+}

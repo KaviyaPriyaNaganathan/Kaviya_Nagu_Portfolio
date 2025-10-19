@@ -224,3 +224,66 @@
         transform-origin: top center;
     }
 }
+
+/* --- PROJECT CARD MOBILE-ONLY SHAPE FIX --- */
+@media (max-width: 768px) {
+    
+    /* 1. Target the MOBILE card wrapper */
+    #mobile-project-cards-container {
+        /* Remove the Tailwind max-width restriction if you added it in HTML */
+        max-width: none; 
+        
+        /* Ensure the container is centered and uses the width */
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* 2. Target the actual project card (e.g., the glass-container) */
+    .glass-container {
+        /* Use a width that looks good on most phones */
+        width: 90vw; 
+        max-width: 420px; /* Cap the max width */
+        
+        /* Ensure height adapts to the new, wider width, making it look shorter */
+        height: auto; 
+        min-height: 350px; 
+        
+        /* Adjust padding for a cleaner look on mobile */
+        padding: 1.5rem; 
+    }
+    
+    /* Ensure the mobile carousel buttons are positioned correctly */
+    #mobile-project-carousel .flex.justify-center.items-center {
+        /* Optional: Add spacing if buttons are too close to the card */
+        gap: 1rem; 
+    }
+    
+    /* IMPORTANT: Re-apply mobile-specific text centering if needed */
+    #movie-title, #movie-description {
+        text-align: center;
+    }
+    #github-link-button {
+        /* Center the button */
+        margin: 0 auto; 
+        display: block; 
+    }
+}
+
+/* --- Ensure desktop view is NOT affected on larger screens --- */
+@media (min-width: 769px) {
+    /* If you accidentally changed the desktop card width earlier, reset it here */
+    .glass-container {
+        width: auto; /* Reset width to default (usually flex/grid based) */
+        max-width: 100%;
+        min-height: 400px; /* Reset original desktop height */
+    }
+    
+    /* Ensure the desktop wrapper is always shown */
+    #desktop-project-wrapper {
+        display: block !important; 
+    }
+    /* Ensure the mobile carousel is always hidden */
+    #mobile-project-carousel {
+        display: none !important;
+    }
+}

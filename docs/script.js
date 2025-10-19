@@ -88,8 +88,18 @@ const prevBtnDesktop = document.getElementById('prev-btn-desktop');
 const nextBtnDesktop = document.getElementById('next-btn-desktop');
 
 // Mobile
-const mobileProjectContainer = document.getElementById('mobile-project-cards-container');
+
 const mobileCarouselWrapper = document.getElementById('mobile-project-carousel');
+
+// --- DOM ELEMENTS ---
+// Desktop
+// ... (Desktop elements unchanged) ...
+
+// Mobile
+// 🛑 FIX THIS LINE: Use the correct ID from your HTML: 'mobile-card-display'
+const mobileProjectContainer = document.getElementById('mobile-card-display'); 
+// const mobileCarouselWrapper = document.getElementById('mobile-project-carousel'); // Removed this, as the ID doesn't exist in the HTML
+
 const prevBtnMobile = document.getElementById('prev-btn-mobile');
 const nextBtnMobile = document.getElementById('next-btn-mobile');
 
@@ -97,6 +107,25 @@ function isSmallScreen() {
     return window.innerWidth < MOBILE_BREAKPOINT;
 }
 
+// --- In your script.js file, find the createMobileCardHTML function:
+
+function createMobileCardHTML(data) {
+    return `
+        <div id="mobile-card-${data.id}" 
+             class="bg-custom-glass-bg backdrop-blur-md rounded-2xl shadow-2xl p-6 
+                    transition-opacity duration-300 ease-in-out border-t-8 border-custom-border w-full **h-[280px]**" 
+             style="border-top-color: ${data.color};">
+            
+            <h4 class="text-2xl font-bold text-yellow-400 mb-2">${data.name}</h4>
+            <p class="text-base text-gray-300 mb-6">${data.description}</p>
+            
+            <a href="${data.githubLink}" target="_blank" class="bg-yellow-400 hover:bg-transparent text-black hover:text-yellow-600 border-2 border-yellow-400 hover:border-yellow-600 font-semibold py-2 px-4 rounded-lg text-sm inline-flex items-center space-x-2 transition-colors">
+                <i class="fas fa-code"></i>
+                <span>View Code</span>
+            </a>
+        </div>
+    `;
+}
 // --- DESKTOP/TABLET LOGIC FUNCTIONS (PROJECTS) ---
 
 /**
